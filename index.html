@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Invisibility Cloak: Thwarting AI Surveillance
+        Day and Night.">
+  <meta name="keywords" content="HyperNeRF, Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon"
+        type="image/x-icon"
+        href="./static/images/aim-logo.png"/>
+
+  <title>NMI: Customizable Adversarial Patches</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF010G6PN"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDF010G6PN');
+
+
+  </script>
+
+  <script type="module"
+          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="http://aim-nercms.whu.edu.cn/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://Physical-Adversarial-Attack.github.io">
+            NMI
+          </a>
+          <a class="navbar-item" href="https://github.com/weihui1308/HOTCOLDBlock">
+            HOTCOLDBlock
+          </a>
+          <a class="navbar-item" href="https://github.com/weihui1308/PAA">
+            PAA
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-4 has-text-centered">
+          <img src="static/images/aim-logo.png" alt="HyperNeRF"/>
+        </div>
+      </div>
+      <div class="container has-text-centered">
+        <h1 class="title is-1 publication-title">
+          Invisibility Cloak: Thwarting AI Surveillance Day and Night
+        </h1>
+      <div class="is-size-5 publication-authors">
+<!--           <div class="author-block">
+            <a href="https://weihui1308.github.io/">Hui Wei</a><sup>1</sup></div>
+          <div class="author-block">
+            <a href="https://hanxunyu.github.io/">Hanxun Yu</a><sup>1</sup></div>
+          <div class="author-block">
+            <a href="https://phogzone.com/">Xuemei Jia</a><sup>1</sup></div>
+          <div class="author-block">
+            <a href="https://wangzwhu.github.io/home/">Zheng Wang</a><sup>1</sup> -->
+          </div>
+
+          <!-- <div class="author-block">
+            <div class="author-portrait">
+              <img src="./static/images/portraits/smseitz_rgb.128.gif" class="rgb preload" />
+              <img src="./static/images/portraits/smseitz_depth.128.gif" class="depth preload" />
+            </div>
+            <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>
+          </div> -->
+        </div>
+
+<!--         <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>1</sup>Wuhan University,</span>
+          <span class="author-block"><sup>2</sup>Google Research</span>
+        </div> -->
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+                <a href="https://arxiv.org/pdf/2106.13228.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+            <span class="link-block">
+                <a href="https://arxiv.org/abs/2106.13228"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/google/hypernerf"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+            <!-- Dataset Link. -->
+            <span class="link-block">
+              <a href="https://github.com/google/hypernerf/releases/tag/v0.1"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="far fa-images"></i>
+                </span>
+                <span>Data</span>
+                </a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns">
+        <div class="column">
+          <video id="teaser" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/images/demo.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            <i>Video1</i> &nbsp; method shows the physical attack effect using visible light imaging.
+          </h2>
+        </div>
+        <div class="column">
+          <video id="teaser" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/images/demo.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            <i>Video2</i> &nbsp; method shows the physical attack effect using thermal infrared imaging.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-dark is-small">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div>
+          <div class="results-item">
+            <video poster="" id="espresso-rgb" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/espresso_rgb.mp4"
+                      type="video/mp4">
+            </video>
+            <video poster="" id="espresso-depth" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/espresso_depth.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div>
+          <div class="results-item">
+            <video poster="" id="split-cookie-rgb" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/split-cookie_rgb.mp4"
+                      type="video/mp4">
+            </video>
+            <video poster="" id="split-cookie-depth" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/split-cookie_depth.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div>
+          <div class="results-item">
+            <video poster="" id="3dprinter-rgb" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/3dprinter_rgb.mp4"
+                      type="video/mp4">
+            </video>
+            <video poster="" id="3dprinter-depth" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/3dprinter_depth.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-quarters">
+          <p>
+            Here we show results generated with <i>NMI</i>. The video on the left shows 
+            a physical attack using visible light imaging 
+            and the video on the right shows a physical attack using thermal infrared imaging.
+            Click on the arrows or drag to see more results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            AI surveillance has certainly improved the safety of human society, nevertheless, it has 
+            also posed significant challenges concerning the protection of personal privacy. Countless cameras serve as the eyes of AI, while deep 
+            neural networks (DNNs) models function as its brain, and AI operates
+            incessantly. Without impairing the AI’s eyes, evading the recognition of
+            the AI’s brain is a feasible yet challenging solution to safeguarding pri
+            vacy. To this end, we present a dual-scene invisibility cloak for privacy
+            protection, enabling pedestrians to evade ubiquitous AI surveillance. Our
+            method is to perform physical adversarial attacks on pedestrian detectors
+            under daytime and nighttime conditions, while simultaneously consider
+            ing the attack’s effectiveness, stealthiness, and robustness. The proposed
+            invisibility cloak is coated with a custom-designed texture that disrupts
+            visible light imaging, while incorporating thermal control materials in
+            its interior to disrupt thermal infrared imaging. Extensive experiments
+            with commercial surveillance cameras on multiple detectors demonstrate
+            consistent and robust invisibility performance. Furthermore, we employ
+            state-of-the-art adversarial defense algorithms to analyze the counter
+            measures of the invisibility cloak, which reveal that no defense method
+            can withstand the cloak’s flexible and adaptive attacks. We anticipate
+            that our work will advance personal privacy protection in the age of AI.
+          </p>
+          <p>
+            Here is the second paragraph of our paper's abstract.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe width="640" height="480" src="https://www.youtube.com/embed/a-wTl_v8O00"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<hr/>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Two Modes</h2>
+    <div class="columns is-centered">
+      <!-- Level Sets. -->
+      <div class="column is-half">
+        <div class="content">
+          <h3 class="title is-4">Visible Light Mode</h3>
+          <div class="level-set has-text-justified">
+            <p>
+              HyperNeRF represents changes in scene topology by providing a
+              NeRF with a higher-dimensional input. This is inspired by level-set methods.
+              Level-set methods provide a means to model a family of topologically-varying shapes as
+              slices of a higher dimensional auxiliary function. For example, these shapes
+            </p>
+            <div class="level-set-shapes">
+              <img src="./static/figures/level_set/0.svg"/>
+              <img src="./static/figures/level_set/1.svg"/>
+              <img src="./static/figures/level_set/2.svg"/>
+            </div>
+            <p>
+              can be represented as slices through this auxiliary shape
+            </p>
+            <model-viewer class="level-set-slices"
+                          src="./static/figures/level_set/level_set_3d.glb"
+                          alt="Slices through a 3D ambient surface."
+                          environment-image="neutral" auto-rotate camera-controls></model-viewer>
+            <p>
+              We can naturally model topologically varying shapes by just moving the
+              slicing plane along the higher dimensions. For example, this animation was generated
+              by
+              moving the slicing plane from top to bottom:
+            </p>
+            <div class="has-text-centered">
+              <video class="level-set-interpolate" controls autoplay loop playsinline muted height="100%">
+                <source src="./static/figures/level_set/interpolate2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/ Level Sets. -->
+
+      <div class="column is-half">
+        <div class="content has-text-justified">
+          <h3 class="is-4">Thermal Infrared Mode</h3>
+          <p>
+            Consider the follow shapes, which have different permutations of O xand X.
+          </p>
+          <div class="level-set-ox-shapes">
+            <img src="./static/figures/level_set/ox/0.svg"/>
+            <img src="./static/figures/level_set/ox/1.svg"/>
+            <img src="./static/figures/level_set/ox/2.svg"/>
+            <img src="./static/figures/level_set/ox/3.svg"/>
+          </div>
+          <p>
+            Traditionally, level-set methods use straight planes to slice the higher-dimensional
+            surface:
+          </p>
+          <model-viewer class="level-set-slices"
+                        src="./static/figures/level_set/ox/ox_ap.glb"
+                        alt="Slices through a 3D ambient surface."
+                        environment-image="neutral" auto-rotate camera-controls></model-viewer>
+          <p>
+            This means the higher-dimensional shape must contain copies of the same shape since
+            each permutation has to lie along a single straight slice through the z-axis. If we let
+            the slicing plane bend, it results in a much cleaner template:
+          </p>
+          <model-viewer class="level-set-slices"
+                        src="./static/figures/level_set/ox/ox_ds.glb"
+                        alt="Slices through a 3D ambient surface."
+                        environment-image="neutral" auto-rotate camera-controls></model-viewer>
+          <p>Please see the paper for details.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<hr/>
+
+<section>
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+      <h2 class="title is-3 has-text-centered">Overview of Our Method</h2>
+      <p>
+        Introduction to the framework diagram of our approach.
+      </p>
+      <div class="has-text-centered">
+        <img style="width: 90%;" src="./static/figures/architecture.svg"
+             alt="HyperNeRF architecture."/>
+      </div>
+      <h3 class="title is-4 has-text-centered">Hyper-Space Template</h3>
+      <p>
+        The first paragraph.
+      </p>
+      <p>
+        The second paragraph. Drag the <span style="color: #29e">blue cursor</span> around to change the ambient dimension rendered
+        on the right.
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="hyper-space-wrapper has-text-centered">
+          <div class="hyper-space-axis">
+            <div class="hyper-space">
+              <div class="hyper-space-cursor"></div>
+            </div>
+          </div>
+          Ambient Dimension Coordinates
+          <br/>
+          <small>(Background shows log density of coordinate)</small>
+        </div>
+      </div>
+      <div class="column is-half has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-grid-rgb">
+            <img src="./static/figures/hyper_grid.jpg"/>
+          </div>
+        </div>
+        The hyper-space template rendered from a fixed viewpoint.
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr/>
+
+<section class="section" id="BibTeX">
+  <div class="container content is-max-desktop">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{
+      <!-- park2021hypernerf,
+  author = {Park, Keunhong and Sinha, Utkarsh and Hedman, Peter and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Martin-Brualla, Ricardo and Seitz, Steven M.},
+  title = {HyperNeRF: A Higher-Dimensional Representation for Topologically Varying Neural Radiance Fields},
+  journal = {ACM Trans. Graph.},
+  issue_date = {December 2021},
+  publisher = {ACM},
+  volume = {40},
+  number = {6},
+  month = {dec},
+  year = {2021},
+  articleno = {238}, -->
+}</code></pre>
+  </div>
+</section>
+
+
+<section class="section" id="acknowledgements">
+  <div class="container content is-max-desktop">
+    <h2 class="title">Acknowledgements</h2>
+    <p>Special thanks to XXX.
+      <!-- <a href="https://homes.cs.washington.edu/~holynski/">Aleksander Hołyński</a>,
+      <a href="https://roxanneluo.github.io/">Xuan Luo</a>, and Haley Cho for their support and
+      help with collecting data. Thanks to <a href="https://zhengqili.github.io/">Zhengqi Li</a> and
+      <a href="http://www.oliverwang.info/">Oliver Wang</a> for their help with the NSFF experiments. -->
+    </p>
+  </div>
+</section>
+
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://arxiv.org/pdf/2106.13228.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</footer> -->
+<footer class="footer">
+  <div class="container">
+      <div class="columns is-centered">
+          <div class="column is-8">
+              <div class="content has-text-centered">
+                  <p>
+                     The website design is adapted from <a href="https://portrait-disco.github.io/">DisCO</a> and <a href="https://github.com/hypernerf/hypernerf.github.io">HyperNeRF</a>.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="./static/slick/slick.min.js"></script>
+</body>
+</html>
