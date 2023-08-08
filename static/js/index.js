@@ -38,9 +38,9 @@ $(window).on("load", function(){
 
 
     const position = { x: 0, y: 0 }
-    const box = $('.hyper-space');
-    const cursor = $('.hyper-space-cursor');
-    interact('.hyper-space-cursor').draggable({
+    const box = $('.hyper-space1');
+    const cursor1 = $('.hyper-space-cursor1');
+    interact('.hyper-space-cursor1').draggable({
       listeners: {
         start (event) {
           console.log(event.type, event.target)
@@ -52,9 +52,9 @@ $(window).on("load", function(){
           event.target.style.transform =
             `translate(${position.x}px, ${position.y}px)`
 
-          let childPos = cursor.offset();
+          let childPos = cursor1.offset();
           let parentPos = box.offset();
-          let childSize = cursor.outerWidth();
+          let childSize = cursor1.outerWidth();
           let point = {
               x: (childPos.left - parentPos.left),
               y: (childPos.top - parentPos.top)
@@ -63,7 +63,7 @@ $(window).on("load", function(){
             x: (point.x) / (box.innerWidth() - childSize),
             y: (point.y) / (box.innerHeight() - childSize)
           }
-          updateHyperGrid(point);
+          updateHyperGrid1(point);
         },
       },
       modifiers: [
@@ -72,6 +72,41 @@ $(window).on("load", function(){
         })
       ]
     });
+    // const position2 = { x: 0, y: 0 }
+    // const box2 = $('.hyper-space2');
+    // const cursor2 = $('.hyper-space-cursor2');
+    // interact('.hyper-space-cursor2').draggable({
+    //   listeners: {
+    //     start (event) {
+    //       console.log(event.type, event.target)
+    //     },
+    //     move (event) {
+    //       position2.x += event.dx
+    //       position2.y += event.dy
+
+    //       event.target.style.transform =
+    //         `translate(${position.x}px, ${position.y}px)`
+
+    //       let childPos = cursor2.offset();
+    //       let parentPos = box2.offset();
+    //       let childSize = cursor2.outerWidth();
+    //       let point = {
+    //           x: (childPos.left - parentPos.left),
+    //           y: (childPos.top - parentPos.top)
+    //       };
+    //       point = {
+    //         x: (point.x) / (box2.innerWidth() - childSize),
+    //         y: (point.y) / (box2.innerHeight() - childSize)
+    //       }
+    //       updateHyperGrid2(point);
+    //     },
+    //   },
+    //   modifiers: [
+    //     interact.modifiers.restrictRect({
+    //       restriction: 'parent'
+    //     })
+    //   ]
+    // });
 
 });
 
@@ -80,10 +115,18 @@ Number.prototype.clamp = function(min, max) {
 };
 
 
-function updateHyperGrid(point) {
+function updateHyperGrid1(point) {
   const n = 20 - 1;
   let top = Math.round(n * point.y.clamp(0, 1)) * 100;
   let left = Math.round(n * point.x.clamp(0, 1)) * 100;
-  $('.hyper-grid-rgb > img').css('left', -left + '%');
-  $('.hyper-grid-rgb > img').css('top', -top + '%');
+  $('.hyper-grid-rgb1 > img').css('left', -left + '%');
+  $('.hyper-grid-rgb1 > img').css('top', -top + '%');
+}
+
+function updateHyperGrid2(point) {
+  const n = 20 - 1;
+  let top = Math.round(n * point.y.clamp(0, 1)) * 100;
+  let left = Math.round(n * point.x.clamp(0, 1)) * 100;
+  $('.hyper-grid-rgb2 > img').css('left', -left + '%');
+  $('.hyper-grid-rgb2 > img').css('top', -top + '%');
 }

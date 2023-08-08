@@ -220,7 +220,7 @@ body {
   border-bottom: 2px solid #000;
 }
 
-.hyper-space {
+.hyper-space1 {
   width: 100%;
   padding-bottom: calc(100% - 7%);
   box_sizing: border-box;
@@ -231,7 +231,26 @@ body {
   border-radius: 10px;
 }
 
-.hyper-space-cursor {
+.hyper-space2 {
+  width: 100%;
+  padding-bottom: calc(100% - 7%);
+  box_sizing: border-box;
+  touch-action: none;
+
+  background-image: url(../figures/hyper_log_prob.png);
+  background-size: contain;
+  border-radius: 10px;
+}
+
+.hyper-space-cursor1 {
+  width: 7%;
+  padding-bottom: calc(7% - 6px);
+  background: #29e;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.hyper-space-cursor2 {
   width: 7%;
   padding-bottom: calc(7% - 6px);
   background: #29e;
@@ -251,7 +270,7 @@ body {
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
-.hyper-grid-rgb {
+.hyper-grid-rgb1 {
   width: 100%;
   height: 90%;
   overflow: hidden;
@@ -261,7 +280,26 @@ body {
   position: absolute;
 }
 
-.hyper-grid-rgb img {
+
+
+.hyper-grid-rgb1 img {
+  position: relative;
+  height: 2000%;
+  width: 2000%;
+  max-width: none !important;
+}
+
+.hyper-grid-rgb2 {
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  
+  border-radius: 10px;
+  border: 2px solid #29e;
+  position: absolute;
+}
+
+.hyper-grid-rgb2 img {
   position: relative;
   height: 2000%;
   width: 2000%;
