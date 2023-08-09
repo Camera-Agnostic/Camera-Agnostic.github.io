@@ -242,6 +242,17 @@ body {
   border-radius: 10px;
 }
 
+.hyper-space3 {
+  width: 100%;
+  padding-bottom: calc(100% - 7%);
+  box_sizing: border-box;
+  touch-action: none;
+
+  background-image: url(../figures/hyper_log_prob.png);
+  background-size: contain;
+  border-radius: 10px;
+}
+
 .hyper-space-cursor1 {
   width: 7%;
   padding-bottom: calc(7% - 6px);
@@ -251,6 +262,14 @@ body {
 }
 
 .hyper-space-cursor2 {
+  width: 7%;
+  padding-bottom: calc(7% - 6px);
+  background: #29e;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.hyper-space-cursor3 {
   width: 7%;
   padding-bottom: calc(7% - 6px);
   background: #29e;
@@ -300,6 +319,24 @@ body {
 }
 
 .hyper-grid-rgb2 img {
+  position: relative;
+  height: 2000%;
+  width: 2000%;
+  max-width: none !important;
+}
+
+
+.hyper-grid-rgb3 {
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  
+  border-radius: 10px;
+  border: 2px solid #29e;
+  position: absolute;
+}
+
+.hyper-grid-rgb3 img {
   position: relative;
   height: 2000%;
   width: 2000%;
