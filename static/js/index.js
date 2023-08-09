@@ -123,10 +123,3 @@ function updateHyperGrid1(point) {
   $('.hyper-grid-rgb1 > img').css('top', -top + '%');
 }
 
-function updateHyperGrid2(point) {
-  const n = 20 - 1;
-  let top = Math.round(n * point.y.clamp(0, 1)) * 100;
-  let left = Math.round(n * point.x.clamp(0, 1)) * 100;
-  $('.hyper-grid-rgb2 > img').css('left', -left + '%');
-  $('.hyper-grid-rgb2 > img').css('top', -top + '%');
-}
