@@ -20,11 +20,11 @@ $(document).ready(function() {
 
 })
 
-const position = { x: 0, y: 0 }
-const box = $('.hyper-space1');
-const box2 = $('.hyper-space2');
-const cursor1 = $('.hyper-space-cursor1');
-const cursor2 = $('.hyper-space-cursor2');
+// const position = { x: 0, y: 0 }
+// const box = $('.hyper-space1');
+// const box2 = $('.hyper-space2');
+// const cursor1 = $('.hyper-space-cursor1');
+// const cursor2 = $('.hyper-space-cursor2');
 
 
 function getDraggable(imageName, position, box, cursor) {
@@ -88,11 +88,17 @@ $(window).on("load", function(){
       $('.hyper-space1'),
       $('.hyper-space2'),
       $('.hyper-space3'),
+      $('.hyper-space4'),
+      $('.hyper-space5'),
+      $('.hyper-space6'),
     ]
     const cursors = [
       $('.hyper-space-cursor1'),
       $('.hyper-space-cursor2'),
       $('.hyper-space-cursor3'),
+      $('.hyper-space-cursor4'),
+      $('.hyper-space-cursor5'),
+      $('.hyper-space-cursor6'),
     ]
     
 
@@ -124,10 +130,33 @@ $(window).on("load", function(){
       ]
     });
 
-   
-  
-   
+    interact('.hyper-space-cursor4').draggable({
+      ...getDraggable('.hyper-grid-rgb4 > img', positions[3], boxs[3], cursors[3]),
+      modifiers: [
+        interact.modifiers.restrictRect({
+          restriction: 'parent'
+        })
+      ]
+    });
 
+    interact('.hyper-space-cursor5').draggable({
+      ...getDraggable('.hyper-grid-rgb5 > img', positions[4], boxs[4], cursors[4]),
+      modifiers: [
+        interact.modifiers.restrictRect({
+          restriction: 'parent'
+        })
+      ]
+    });
+
+    interact('.hyper-space-cursor6').draggable({
+      ...getDraggable('.hyper-grid-rgb6 > img', positions[5], boxs[5], cursors[5]),
+      modifiers: [
+        interact.modifiers.restrictRect({
+          restriction: 'parent'
+        })
+      ]
+    });
+  
 });
 
 
