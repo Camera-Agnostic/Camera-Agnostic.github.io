@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Invisibility Cloak: Thwarting AI Surveillance
+  <head>
+    <meta charset="utf-8">
+    <meta name="description"
+      content="Invisibility Cloak: Thwarting AI Surveillance
         Day and Night.">
-  <meta name="keywords" content="HyperNeRF, Nerfies, D-NeRF, NeRF">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon"
-        type="image/x-icon"
-        href="./static/images/aim-logo.png"/>
+    <meta name="keywords" content="HyperNeRF, Nerfies, D-NeRF, NeRF">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon"
+      type="image/x-icon"
+      href="./static/images/aim-logo.png" />
 
-  <title>CAP-Attack</title>
+    <title>CAP-Attack</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF010G6PN"></script>
-  <script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF010G6PN"></script>
+    <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -25,84 +25,89 @@
 
   </script>
 
-  <script type="module"
-          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
 
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-</head>
-<body>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="http://aim-nercms.whu.edu.cn/">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu"
+          aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://camera-agnostic.github.io">
-            NMI
-          </a>
-          <a class="navbar-item" href="https://github.com/weihui1308/HOTCOLDBlock">
-            HOTCOLDBlock
-          </a>
-          <a class="navbar-item" href="https://github.com/weihui1308/PAA">
-            PAA
-          </a>
-        </div>
       </div>
-    </div>
+      <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+          <a class="navbar-item" href="http://aim-nercms.whu.edu.cn/">
+            <span class="icon">
+              <i class="fas fa-home"></i>
+            </span>
+          </a>
 
-  </div>
-</nav>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More Research
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://camera-agnostic.github.io">
+                NMI
+              </a>
+              <a class="navbar-item"
+                href="https://github.com/weihui1308/HOTCOLDBlock">
+                HOTCOLDBlock
+              </a>
+              <a class="navbar-item" href="https://github.com/weihui1308/PAA">
+                PAA
+              </a>
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </nav>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <!-- <div class="columns is-centered">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <!-- <div class="columns is-centered">
         <div class="column is-4 has-text-centered">
           <img src="static/images/aim-logo.png" alt="HyperNeRF"/>
         </div>
       </div> -->
-      <div class="container has-text-centered">
-        <h1 class="title is-1 publication-title">
-          Physical Adversarial Attack
-      <div class="is-size-5 publication-authors">
-<!--           <div class="author-block">
+          <div class="container has-text-centered">
+            <h1 class="title is-1 publication-title">
+              Physical Adversarial Attack
+              <div class="is-size-5 publication-authors">
+                <!--           <div class="author-block">
             <a href="https://weihui1308.github.io/">Hui Wei</a><sup>1</sup></div>
           <div class="author-block">
             <a href="https://hanxunyu.github.io/">Hanxun Yu</a><sup>1</sup></div>
@@ -110,70 +115,71 @@
             <a href="https://phogzone.com/">Xuemei Jia</a><sup>1</sup></div>
           <div class="author-block">
             <a href="https://wangzwhu.github.io/home/">Zheng Wang</a><sup>1</sup> -->
-          </div>
+              </div>
 
-          <!-- <div class="author-block">
+              <!-- <div class="author-block">
             <div class="author-portrait">
               <img src="./static/images/portraits/smseitz_rgb.128.gif" class="rgb preload" />
               <img src="./static/images/portraits/smseitz_depth.128.gif" class="depth preload" />
             </div>
             <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>
           </div> -->
-        </div>
+            </div>
 
-<!--         <div class="is-size-5 publication-authors">
+            <!--         <div class="is-size-5 publication-authors">
           <span class="author-block"><sup>1</sup>Wuhan University,</span>
           <span class="author-block"><sup>2</sup>Google Research</span>
         </div> -->
 
-        <div class="column has-text-centered">
-          <div class="publication-links">
-            <!-- PDF Link. -->
-            <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-            <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-            </span>
-            <span class="link-block">
-              <a href="https://github.com/Camera-Agnostic/Camera-Agnostic.github.io"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fab fa-github"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
                 </span>
-                <span>Code</span>
-                </a>
-            </span>
-            <!-- Dataset Link. -->
-            <span class="link-block">
-              <a href="#"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="far fa-images"></i>
+                <span class="link-block">
+                  <a
+                    href="https://github.com/Camera-Agnostic/Camera-Agnostic.github.io"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
                 </span>
-                <span>Data</span>
-                </a>
-              </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- <section class="hero teaser">
+    <!-- <section class="hero teaser">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns">
@@ -395,123 +401,160 @@
 </section>
 <hr/> -->
 
-<section>
-  <div class="container is-max-desktop">
+    <section>
+      <div class="container is-max-widescreen">
+        <div class="colunms is-flex is-justify-content-center">
+          <div class="column is-one-quarter">
+            <img src="./assets/lens/crop_000021_orig.png" alt />
+          </div>
+          <div class="column is-one-quarter">
+            <img src="./assets/lens/crop_000021_Cooke.png" alt />
+          </div>
+          <div class="column is-one-quarter">
+            <img src="./assets/lens/crop_000021_Doublet.png" alt />
+          </div>
+          <div class="column is-one-quarter">
+            <img src="./assets/lens/crop_000021_Singlet.png" alt />
+          </div>
+          <div class="column is-one-quarter">
+            <img src="./assets/lens/crop_000021_Tessar.png" alt />
+          </div>
+
+        </div>
+        <div class="content has-text-justified"></div>
+        <h2 class="title is-3 has-text-centered">Results Showcase of ISP Proxy Network</h2>
+       
    
-    <div class="content has-text-justified"></div>
-    <h2 class="title is-3 has-text-centered">Results Showcase of ISP Proxy Network</h2>
-    <p>
-      gamma & contrast
-    </p>
+        <span class="title is-5 has-text-left">
+          vertical: gamma correction
+        </span> 
+        <span class="is-text is-6">(gamma correction compensates the luminance of a pixel’s numerical value and it’s actual luminance)</span>
 
-    <div class="columns is-centered">
-      <div class="column is-half">
-        <div class="hyper-space-wrapper has-text-centered">
-          <div class="hyper-space-axis">
-            <div class="hyper-space1">
-              <div class="hyper-space-cursor1"></div>
+        <br/>
+        <span class="title is-5 has-text-left">
+          horizontal: contrast
+        </span>
+        <div class="columns is-centered">
+          
+          <div class="column is-one-third">
+            <div class="hyper-space-wrapper has-text-centered">
+              <div class="hyper-space-axis">
+                <div class="hyper-space1">
+                  <div class="hyper-space-cursor1"></div>
+                </div>
+              </div>
+              Parameter Dimension Coordinates
+              <br />
+
             </div>
           </div>
-          Ambient Dimension Coordinates
-          <br/>
-          <small>(Background shows log density of coordinate)</small>
-        </div>
-      </div>
-      <div class="column is-half has-text-centered">
-        <div class="hyper-grid-wrapper">
-          <div class="hyper-grid-rgb1">
-            <img src="./static/figures/isp_gamma_cont.jpg"/>
+          <div class="column is-one-third has-text-centered">
+            <div class="hyper-grid-wrapper">
+              <div class="hyper-grid-rgb1">
+                <img src="./static/figures/isp_gamma_cont.jpg" />
+              </div>
+            </div>
+            Open ISP
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <div class="hyper-grid-wrapper">
+              <div class="hyper-grid-rgb1">
+                <img src="./static/figures/net_gamma_cont.jpg" />
+              </div>
+            </div>
+            ISP Proxy Network
           </div>
         </div>
-        Open ISP
-      </div>
-      <div class="column is-half has-text-centered">
-        <div class="hyper-grid-wrapper">
-          <div class="hyper-grid-rgb1">
-            <img src="./static/figures/net_gamma_cont.jpg"/>
-          </div>
-        </div>
-        ISP Proxy Network
-      </div>
-    </div>
+<br>
 
-    <p>
-      color convert metric & nlm
-    </p>
-    <div class="columns is-centered">
-      <div class="column is-half">
-        <div class="hyper-space-wrapper has-text-centered">
-          <div class="hyper-space-axis">
-            <div class="hyper-space2">
-              <div class="hyper-space-cursor2"></div>
+        <span class="title is-5 has-text-left">
+          vertical: brightness
+        </span>
+        <br/>
+        <span class="title is-5 has-text-left">
+          horizontal: non-local means 
+        </span>
+        <span class="is-text is6">(larger value has stronger smoothing effect)</span>
+        <div class="columns is-centered">
+          <div class="column is-one-third">
+            <div class="hyper-space-wrapper has-text-centered">
+              <div class="hyper-space-axis">
+                <div class="hyper-space2">
+                  <div class="hyper-space-cursor2"></div>
+                </div>
+              </div>
+              Parameter Dimension Coordinates
+              <br />
+    
             </div>
           </div>
-          Ambient Dimension Coordinates
-          <br/>
-          <small>(Background shows log density of coordinate)</small>
-        </div>
-      </div>
-      <div class="column is-half has-text-centered">
-        <div class="hyper-grid-wrapper">
-          <div class="hyper-grid-rgb2">
-            <img src="./static/figures/isp_ccm_nlm.jpg"/>
+          <div class="column is-one-third has-text-centered">
+            <div class="hyper-grid-wrapper">
+              <div class="hyper-grid-rgb2">
+                <img src="./static/figures/isp_ccm_nlm.jpg" />
+              </div>
+            </div>
+            Open ISP
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <div class="hyper-grid-wrapper">
+              <div class="hyper-grid-rgb2">
+                <img src="./static/figures/net_ccm_nlm.jpg" />
+              </div>
+            </div>
+            ISP Proxy Network
           </div>
         </div>
-        Open ISP
-      </div>
-      <div class="column is-half has-text-centered">
-        <div class="hyper-grid-wrapper">
-          <div class="hyper-grid-rgb2">
-            <img src="./static/figures/net_ccm_nlm.jpg"/>
-          </div>
-        </div>
-        ISP Proxy Network
-      </div>
-    </div>
+        <br>
 
-    <p>
-      saturation & bnf
-    </p>
-    <div class="columns is-centered">
-      <div class="column is-half">
-        <div class="hyper-space-wrapper has-text-centered">
-          <div class="hyper-space-axis">
-            <div class="hyper-space3">
-              <div class="hyper-space-cursor3"></div>
+
+        <span class="title is-5 has-text-left">
+          vertical: saturation
+        </span>
+        <br/>
+        <span class="title is-5 has-text-left">
+          horizontal: parameter of brightness normalization filter
+        </span>
+        <span class="is-text is-6">(larger value has stronger smoothing effect)</span>
+        <div class="columns is-centered">
+          <div class="column is-one-third">
+            <div class="hyper-space-wrapper has-text-centered">
+              <div class="hyper-space-axis">
+                <div class="hyper-space3">
+                  <div class="hyper-space-cursor3"></div>
+                </div>
+              </div>
+              Parameter Dimension Coordinates
+              <br />
+             
             </div>
           </div>
-          Ambient Dimension Coordinates
-          <br/>
-          <small>(Background shows log density of coordinate)</small>
-        </div>
-      </div>
-      <div class="column is-half has-text-centered">
-        <div class="hyper-grid-wrapper">
-          <div class="hyper-grid-rgb3">
-            <img src="./static/figures/isp_bnf_sat.jpg"/>
+          <div class="column is-one-third has-text-centered">
+            <div class="hyper-grid-wrapper">
+              <div class="hyper-grid-rgb3">
+                <img src="./static/figures/isp_bnf_sat.jpg" />
+              </div>
+            </div>
+            Open ISP
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <div class="hyper-grid-wrapper">
+              <div class="hyper-grid-rgb3">
+                <img src="./static/figures/net_bnf_sat.jpg" />
+              </div>
+            </div>
+            ISP Proxy Network
           </div>
         </div>
-        Open ISP
-      </div>
-      <div class="column is-half has-text-centered">
-        <div class="hyper-grid-wrapper">
-          <div class="hyper-grid-rgb3">
-            <img src="./static/figures/net_bnf_sat.jpg"/>
-          </div>
-        </div>
-        ISP Proxy Network
-      </div>
-    </div>
 
-   
-</section>
+      </section>
 
-<hr/>
+      <hr />
 
-<section class="section" id="BibTeX">
-  <div class="container content is-max-desktop">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{
+      <section class="section" id="BibTeX">
+        <div class="container content is-max-desktop">
+          <h2 class="title">BibTeX</h2>
+          <pre><code>@article{
       <!-- park2021hypernerf,
   author = {Park, Keunhong and Sinha, Utkarsh and Hedman, Peter and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Martin-Brualla, Ricardo and Seitz, Steven M.},
   title = {HyperNeRF: A Higher-Dimensional Representation for Topologically Varying Neural Radiance Fields},
@@ -524,24 +567,22 @@
   year = {2021},
   articleno = {238}, -->
 }</code></pre>
-  </div>
-</section>
+        </div>
+      </section>
 
-
-<section class="section" id="acknowledgements">
-  <div class="container content is-max-desktop">
-    <h2 class="title">Acknowledgements</h2>
-    <p>Special thanks to XXX.
-      <!-- <a href="https://homes.cs.washington.edu/~holynski/">Aleksander Hołyński</a>,
+      <section class="section" id="acknowledgements">
+        <div class="container content is-max-desktop">
+          <h2 class="title">Acknowledgements</h2>
+          <p>Special thanks to XXX.
+            <!-- <a href="https://homes.cs.washington.edu/~holynski/">Aleksander Hołyński</a>,
       <a href="https://roxanneluo.github.io/">Xuan Luo</a>, and Haley Cho for their support and
       help with collecting data. Thanks to <a href="https://zhengqili.github.io/">Zhengqi Li</a> and
       <a href="http://www.oliverwang.info/">Oliver Wang</a> for their help with the NSFF experiments. -->
-    </p>
-  </div>
-</section>
+          </p>
+        </div>
+      </section>
 
-
-<!-- <footer class="footer">
+      <!-- <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link" href="https://arxiv.org/pdf/2106.13228.pdf">
@@ -553,20 +594,22 @@
     </div>
   </div>
 </footer> -->
-<footer class="footer">
-  <div class="container">
-      <div class="columns is-centered">
-          <div class="column is-8">
+      <footer class="footer">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-8">
               <div class="content has-text-centered">
-                  <p>
-                     The website design is adapted from <a href="https://portrait-disco.github.io/">DisCO</a> and <a href="https://github.com/hypernerf/hypernerf.github.io">HyperNeRF</a>.
-                  </p>
+                <p>
+                  The website design is adapted from <a
+                    href="https://portrait-disco.github.io/">DisCO</a> and <a
+                    href="https://github.com/hypernerf/hypernerf.github.io">HyperNeRF</a>.
+                </p>
               </div>
+            </div>
           </div>
-      </div>
-  </div>
-</footer>
+        </div>
+      </footer>
 
-<script type="text/javascript" src="./static/slick/slick.min.js"></script>
-</body>
-</html>
+      <script type="text/javascript" src="./static/slick/slick.min.js"></script>
+    </body>
+  </html>
