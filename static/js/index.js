@@ -88,22 +88,22 @@ $(window).on("load", function(){
       $('.hyper-space1'),
       $('.hyper-space2'),
       $('.hyper-space3'),
-      $('.hyper-space4'),
-      $('.hyper-space5'),
-      $('.hyper-space6'),
+      // $('.hyper-space4'),
+      // $('.hyper-space5'),
+      // $('.hyper-space6'),
     ]
     const cursors = [
       $('.hyper-space-cursor1'),
       $('.hyper-space-cursor2'),
       $('.hyper-space-cursor3'),
-      $('.hyper-space-cursor4'),
-      $('.hyper-space-cursor5'),
-      $('.hyper-space-cursor6'),
+      // $('.hyper-space-cursor4'),
+      // $('.hyper-space-cursor5'),
+      // $('.hyper-space-cursor6'),
     ]
     
 
     
-    interact('.hyper-space-cursor1').draggable({
+    interact('#cursor1').draggable({
       ...getDraggable('.hyper-grid-rgb1 > img', positions[0], boxs[0], cursors[0]),
       modifiers: [
         interact.modifiers.restrictRect({

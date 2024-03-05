@@ -2,6 +2,10 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.info {
+  font-family: 'Noto Sans', sans-serif;
+  margin-bottom: 50px;
+}
 
 .footer .icon-link {
     font-size: 25px;

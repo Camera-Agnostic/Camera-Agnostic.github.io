@@ -197,11 +197,12 @@
       <div id="results-carousel" class="carousel results-carousel">
 
         <div>
-          <div class="results-item">
-            <div class="is-flex is-justify-content-center" style="object-fit: contain;">
-
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
+          <div class="results-item" >
+            <div class="is-flex is-justify-content-center"  >
+                <div>
+                  <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
+                </div>
+                <img src="./assets/lens/crop_000021_orig.png"  width="50%" alt />
             </div>
           </div>
         </div>
@@ -466,27 +467,18 @@
         </h2>
 
 
-        <span class="title is-5 has-text-left">
-          vertical: gamma correction
-        </span>
-        <span class="is-text is-6">(gamma correction compensates the luminance
-          of a pixel’s numerical value and it’s actual luminance)</span>
-
-        <br />
-        <span class="title is-5 has-text-left">
-          horizontal: contrast
-        </span>
+        
         <div class="columns is-centered">
 
           <div class="column is-one-third">
-            <div class="hyper-space-wrapper has-text-centered">
+            <div class="hyper-space-wrapper has-text-centered title is-5">
               <div class="hyper-space-axis">
                 <div class="hyper-space1">
-                  <div class="hyper-space-cursor1"></div>
+                  <div class="hyper-space-cursor1" id="cursor1"></div>
                 </div>
               </div>
-             x: contrast <br> 
-             y: gamma 
+             X: contrast <br> 
+             Y: gamma 
               <br />
 
             </div>
@@ -508,25 +500,34 @@
             Our ISP Proxy Network
           </div>
         </div>
-        <br>
 
-        <span class="title is-5 has-text-left">
-          vertical: brightness
-        </span>
-        <br />
-        <span class="title is-5 has-text-left">
-          horizontal: non-local means
-        </span>
-        <span class="is-text is6">(larger value has stronger smoothing effect)</span>
+        <div class="info">
+          <span class="title is-5 has-text-left">
+            gamma: 
+          </span>
+          <span class="is-text is-6">gamma correction compensates the luminance
+            of a pixel’s numerical value and it’s actual luminance</span>
+  
+          <br />
+          <span class="title is-5 has-text-left">
+            contrast:
+          </span>
+          <span class="is-text is-6">contrast defination</span>
+
+        </div>
+        
+
+
+        
         <div class="columns is-centered">
           <div class="column is-one-third">
-            <div class="hyper-space-wrapper has-text-centered">
+            <div class="hyper-space-wrapper has-text-centered title is-5">
               <div class="hyper-space-axis">
                 <div class="hyper-space2">
                   <div class="hyper-space-cursor2"></div>
                 </div>
               </div>
-              x: brightness <br> y: non-local means 
+              X: brightness <br> Y: non-local means 
               <br />
 
             </div>
@@ -548,25 +549,28 @@
             Our ISP Proxy Network
           </div>
         </div>
-        <br>
+        <div class="info">
+          <span class="title is-5 has-text-left">
+           brightness: 
+          </span>
+          <span class="is-text is6">brightness defination</span>
+          <br />
+          <span class="title is-5 has-text-left">
+           non-local means: 
+          </span>
+          <span class="is-text is6">larger value has stronger smoothing effect</span>
+        </div>
 
-        <span class="title is-5 has-text-left">
-          vertical: saturation
-        </span>
-        <br />
-        <span class="title is-5 has-text-left">
-          horizontal: parameter of brightness normalization filter
-        </span>
-        <span class="is-text is-6">(larger value has stronger smoothing effect)</span>
+        
         <div class="columns is-centered">
           <div class="column is-one-third">
-            <div class="hyper-space-wrapper has-text-centered">
+            <div class="hyper-space-wrapper has-text-centered title is-5">
               <div class="hyper-space-axis">
                 <div class="hyper-space3">
                   <div class="hyper-space-cursor3"></div>
                 </div>
               </div>
-              x: saturation <br> y: BNF
+              X: saturation <br> Y: BNF
               <br />
 
             </div>
@@ -587,6 +591,17 @@
             </div>
             Our ISP Proxy Network
           </div>
+        </div>
+        <div class="info">
+          <span class="title is-5 has-text-left">
+            saturation:
+          </span>
+          <span class="is-text is-6">saturation defination</span>
+          <br />
+          <span class="title is-5 has-text-left">
+            BNF:
+          </span>
+          <span class="is-text is-6">parameter of brightness normalization filter, larger value has stronger smoothing effect</span>
         </div>
 
       </section>
