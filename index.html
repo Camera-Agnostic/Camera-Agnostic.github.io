@@ -76,7 +76,7 @@
       </div> -->
           <div class="container has-text-centered">
             <h1 class="title is-1 publication-title">
-              Physical Adversarial Attack
+              Camera-Agnostic Physical Adversarial Attacks for Securing Privacy in the Gaze of AI+Camera Synergy
             <div class="is-size-5 publication-authors">
                 <div class="author-block">
                   <a href="https://weihui1308.github.io/">Hui Wei</a><sup>1</sup>
@@ -98,6 +98,9 @@
                 </div>
                 <div class="author-block">
                   <a href="https://scholar.google.com/citations?user=Hl9QqZIAAAAJ">Meng Huang</a><sup>1</sup>
+                </div>
+                <div class="author-block">
+                  <a href="https://scholar.google.be/citations?user=c9ZfhU0AAAAJ">Ruimin Hu</a><sup>1</sup>
                 </div>
                 <div class="author-block">
                   <a href="https://scholar.google.com/citations?user=JD-5DKcAAAAJ">Yinqiang Zheng</a><sup>2</sup>
@@ -207,8 +210,8 @@
         <div>
           <div class="results-item" >
             <div class="is-flex is-justify-content-center"  style="object-fit: contain;">
-                <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
-                <img src="./assets/lens/crop_000021_orig.png"  width="50%" alt />
+                <img src="./assets/display/displaySony.png" width="100%" alt />
+                <!-- <img src="./assets/lens/crop_000021_orig.png"  width="50%" alt /> -->
             </div>
           </div>
         </div>
@@ -217,8 +220,7 @@
           <div class="results-item">
             <div class="is-flex is-justify-content-center" style="object-fit: contain;">
 
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
+              <img src="./assets/display/displayCanon.png" width="100%" alt />
             </div>
           </div>
         </div>
@@ -227,8 +229,7 @@
           <div class="results-item">
             <div class="is-flex is-justify-content-center" style="object-fit: contain;">
 
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
+              <img src="./assets/display/displayiPhone.png" width="100%" alt />
             </div>
           </div>
         </div>
@@ -237,8 +238,7 @@
           <div class="results-item">
             <div class="is-flex is-justify-content-center" style="object-fit: contain;">
 
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
+              <img src="./assets/display/displayMi.png" width="100%" alt />
             </div>
           </div>
         </div>
@@ -247,8 +247,7 @@
           <div class="results-item">
             <div class="is-flex is-justify-content-center" style="object-fit: contain;">
 
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
+              <img src="./assets/display/displayHuawei.png" width="100%" alt />
             </div>
           </div>
         </div>
@@ -257,8 +256,7 @@
           <div class="results-item">
             <div class="is-flex is-justify-content-center" style="object-fit: contain;">
 
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
-              <img src="./assets/lens/crop_000021_orig.png" width="50%" alt />
+              <img src="./assets/display/displaySamsung.png" width="100%" alt />
             </div>
           </div>
         </div>
@@ -337,7 +335,9 @@
             that our work will advance personal privacy protection in the age of AI.
           </p>
           <!-- <p>
+          <!-- <p>
             Here is the second paragraph of our paper's abstract.
+          </p> -->
           </p> -->
         </div>
       </div>
@@ -363,7 +363,7 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Pipeline</h2>
-    <img src="assets/pipeline_v5.png" alt / >
+    <img src="assets/pipeline_v5.jpg" alt />
     <div class="columns is-centered">
       
       <div class="column is-half">
@@ -377,18 +377,17 @@
               Level-set methods provide a means to model a family of topologically-varying shapes as
               slices of a higher dimensional auxiliary function. For example, these shapes
             </p>
-            <div class="level-set-shapes">
-              <img src="./static/figures/level_set/0.svg"/>
-              <img src="./static/figures/level_set/1.svg"/>
-              <img src="./static/figures/level_set/2.svg"/>
+            <div class="level-set-slices">
+              <img src="./assets/display/displayCanon.PNG"/>
+              <!-- <img src="./assets/display/displayCanon.PNG"/>
+              <img src="./assets/display/displayCanon.PNG"/> -->
             </div>
             <p>
               can be represented as slices through this auxiliary shape
             </p>
-            <model-viewer class="level-set-slices"
-                          src="./static/figures/level_set/level_set_3d.glb"
-                          alt="Slices through a 3D ambient surface."
-                          environment-image="neutral" auto-rotate camera-controls></model-viewer>
+            <div>
+              <img src="./assets/display/physicalPerson.png" width="100%"/>
+            </div>
             <p>
               We can naturally model topologically varying shapes by just moving the
               slicing plane along the higher dimensions. For example, this animation was generated
@@ -407,30 +406,21 @@
           <p>
             Consider the follow shapes, which have different permutations of O xand X.
           </p>
-          <div class="level-set-ox-shapes">
-            <img src="./static/figures/level_set/ox/0.svg"/>
-            <img src="./static/figures/level_set/ox/1.svg"/>
-            <img src="./static/figures/level_set/ox/2.svg"/>
-            <img src="./static/figures/level_set/ox/3.svg"/>
+          <div>
+            <img src="./assets/digitalPersonDet_v1.png" width="100%"/>
           </div>
           <p>
             Traditionally, level-set methods use straight planes to slice the higher-dimensional
             surface:
           </p>
-          <model-viewer class="level-set-slices"
-                        src="./static/figures/level_set/ox/ox_ap.glb"
-                        alt="Slices through a 3D ambient surface."
-                        environment-image="neutral" auto-rotate camera-controls></model-viewer>
+          <div class="level-set-slices">
+            <img src="./assets/display/displayCanon.PNG"/>
+          </div>
           <p>
             This means the higher-dimensional shape must contain copies of the same shape since
             each permutation has to lie along a single straight slice through the z-axis. If we let
             the slicing plane bend, it results in a much cleaner template:
           </p>
-          <model-viewer class="level-set-slices"
-                        src="./static/figures/level_set/ox/ox_ds.glb"
-                        alt="Slices through a 3D ambient surface."
-                        environment-image="neutral" auto-rotate camera-controls></model-viewer>
-          <p>Please see the paper for details.</p>
         </div>
       </div>
 
