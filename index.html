@@ -268,10 +268,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-three-quarters">
           <p>
-            Here we show results generated with <i>NMI</i>. The video on the left shows 
-            a physical attack using visible light imaging 
-            and the video on the right shows a physical attack using thermal infrared imaging.
-            Click on the arrows or drag to see more results.
+            Here, we present the comparison results between <strong>T-SEA</strong> and <strong>our method</strong>. We control the scene to eliminate the influence of irrelevant factors. Click the arrow or drag to view more results.
           </p>
         </div>
       </div>
@@ -289,30 +286,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            AI surveillance has certainly improved the safety of human society, nevertheless, it has 
-            also posed significant challenges concerning the protection of personal privacy. Countless cameras serve as the eyes of AI, while deep 
-            neural networks (DNNs) models function as its brain, and AI operates
-            incessantly. Without impairing the AI’s eyes, evading the recognition of
-            the AI’s brain is a feasible yet challenging solution to safeguarding privacy. 
-            To this end, we present a dual-scene invisibility cloak for privacy
-            protection, enabling pedestrians to evade ubiquitous AI surveillance. Our
-            method is to perform physical adversarial attacks on pedestrian detectors
-            under daytime and nighttime conditions, while simultaneously consider
-            ing the attack’s effectiveness, stealthiness, and robustness. The proposed
-            invisibility cloak is coated with a custom-designed texture that disrupts
-            visible light imaging, while incorporating thermal control materials in
-            its interior to disrupt thermal infrared imaging. Extensive experiments
-            with commercial surveillance cameras on multiple detectors demonstrate
-            consistent and robust invisibility performance. Furthermore, we employ
-            state-of-the-art adversarial defense algorithms to analyze the counter
-            measures of the invisibility cloak, which reveal that no defense method
-            can withstand the cloak’s flexible and adaptive attacks. We anticipate
-            that our work will advance personal privacy protection in the age of AI.
+            The surge of cameras, coupled with AI, poses significant privacy threats and ethical concerns. 
+            Existing privacy protection strategies rely on top-down designs, leaving individuals powerless against technological abuse. 
+            Here, we propose camera-agnostic physical adversarial attacks for privacy preservation. 
+            We observed that current attacks are designed for single imaging devices, leading to inefficacy and instability in real-world scenarios where visual signals are captured by diverse cameras. 
+            We introduce a novel adversarial optimization framework comprising attack and defense modules. 
+            The attack module optimizes perturbations to maximize effectiveness, while the defense module optimizes the conditional parameters of a camera ISP proxy to minimize attack effectiveness. 
+            These modules engage in an adversarial game, enhancing cross-camera stability. 
+            In various experiments, our method effectively misleading privacy-sensitive tasks across various hardware, including two distinct cameras and four smartphones. 
+            We anticipate that our work will advance real-world adversarial attacks, providing individuals with practical solutions to mitigate privacy concerns.
           </p>
           <!-- <p>
-          <!-- <p>
+          <p>
             Here is the second paragraph of our paper's abstract.
-          </p> -->
+          </p>
           </p> -->
         </div>
       </div>
@@ -343,21 +330,15 @@
       
       <div class="column is-half">
         <div class="content">
-          <h3 class="title is-4">Visible Light Mode</h3>
+          <h3 class="title is-4">Quantification of real-world attacks</h3>
           <div class="level-set has-text-justified">
-            
             <p>
-              HyperNeRF represents changes in scene topology by providing a
-              NeRF with a higher-dimensional input. This is inspired by level-set methods.
-              Level-set methods provide a means to model a family of topologically-varying shapes as
-              slices of a higher dimensional auxiliary function. For example, these shapes
+              The figure below presents the precision-recall (PR) curves of different methods on the INRIAPerson dataset. Our method exhibits excellent performance across various ISP settings, with the lowest AP reduction down to 27.8%.
             </p>
-            <div class="level-set-slices">
-              <img src="./assets/display/displayCanon.PNG"/>
-              <!-- <img src="./assets/display/displayCanon.PNG"/>
-              <img src="./assets/display/displayCanon.PNG"/> -->
+            <div>
+              <img src="./assets/display/digitalPerson.png" width="100%"/>
             </div>
-            <p>
+            <!-- <p>
               can be represented as slices through this auxiliary shape
             </p>
             <div>
@@ -368,14 +349,38 @@
               slicing plane along the higher dimensions. For example, this animation was generated
               by
               moving the slicing plane from top to bottom:
-            </p>
-            
+            </p> -->
           </div>
         </div>
       </div>
 
-
       <div class="column is-half">
+        <div class="content">
+          <h3 class="title is-4">Quantification of real-world attacks</h3>
+          <div class="level-set has-text-justified">
+            <p>
+              In all six sets of quantitative comparisons, our method achieves an ASR (Attack Success Rate) of over 90% across six imaging devices, demonstrating excellent attack effectiveness and stability.
+            </p>
+            <div>
+              <img src="./assets/display/physicalPerson.png" width="100%"/>
+            </div>
+            <!-- <p>
+              can be represented as slices through this auxiliary shape
+            </p>
+            <div>
+              <img src="./assets/display/physicalPerson.png" width="100%"/>
+            </div>
+            <p>
+              We can naturally model topologically varying shapes by just moving the
+              slicing plane along the higher dimensions. For example, this animation was generated
+              by
+              moving the slicing plane from top to bottom:
+            </p> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="column is-half">
         <div class="content has-text-justified">
           <h3 class="is-4">Thermal Infrared Mode</h3>
           <p>
@@ -397,11 +402,12 @@
             the slicing plane bend, it results in a much cleaner template:
           </p>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>
 </section>
+
 <hr/> 
 
     <section>
