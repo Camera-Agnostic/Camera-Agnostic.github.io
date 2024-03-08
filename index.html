@@ -305,38 +305,45 @@
       </div>
     </div>
 
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe width="640" height="480" src="https://www.youtube.com/embed/a-wTl_v8O00"
-                  title="YouTube video player" frameborder="0"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-
+    <h2 class="title is-3 has-text-centered">Pipeline</h2>
+    <img style="width: 100%;" src="./assets/display/pipeline_v5.png" alt="HyperNeRF architecture." />
+    <p>
+      Our pipeline comprises two mutually adversarial parts: Attacker and Defender. 
+      The attacker optimizes adversarial perturbations to maximize attack effectiveness, 
+      while the defender optimizes the conditional input hyperparameter of the ISP proxy network to minimize attack effectiveness. 
+      The two parts cyclically alternate during the optimization stage.
+    </p>
   </div>
 </section>
 
 <hr/>
 
 <section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Pipeline</h2>
-    <img src="./assets/pipeline_v5.png" alt />
+  <div class="container is-max-desktop">  
+    <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+          <h2 class="title is-3">Camera-Agnostic Attacks</h2>
+          <p>
+            Compared to other methods that only succeed in attacking on individual imaging devices, our approach achieves stable attacks across all six cameras. 
+            The experiments are conducted using the YOLOv5 detector, with confidence threshold and NMS IOU threshold consistent with official settings, set at 0.25 and 0.45, respectively.
+          </p>
+          <div class="has-text-centered">
+            <img style="width: 100%;" src="./assets/display/physicalPersonresult.png" alt="Person detection." />
+          </div>
+        </div>
+    </div>
+
     <div class="columns is-centered">
       
       <div class="column is-half">
         <div class="content">
-          <h3 class="title is-4">Quantification of real-world attacks</h3>
+          <h3 class="title is-4">Quantification of digital-space attacks</h3>
           <div class="level-set has-text-justified">
             <p>
               The figure below presents the precision-recall (PR) curves of different methods on the INRIAPerson dataset. Our method exhibits excellent performance across various ISP settings, with the lowest AP reduction down to 27.8%.
             </p>
             <div>
-              <img src="./assets/display/digitalPerson.png" width="100%"/>
+              <img src="./assets/display/digitalPersonDet_v1.png" width="100%"/>
             </div>
             <!-- <p>
               can be represented as slices through this auxiliary shape
@@ -359,52 +366,17 @@
           <h3 class="title is-4">Quantification of real-world attacks</h3>
           <div class="level-set has-text-justified">
             <p>
-              In all six sets of quantitative comparisons, our method achieves an ASR (Attack Success Rate) of over 90% across six imaging devices, demonstrating excellent attack effectiveness and stability.
+              In all six sets of quantitative comparisons, our method achieves an ASR (Attack Success Rate) of over 90% across six imaging devices, demonstrating excellent attack effectiveness and stability on the person detection task.
             </p>
             <div>
               <img src="./assets/display/physicalPerson.png" width="100%"/>
             </div>
-            <!-- <p>
-              can be represented as slices through this auxiliary shape
-            </p>
-            <div>
-              <img src="./assets/display/physicalPerson.png" width="100%"/>
-            </div>
-            <p>
-              We can naturally model topologically varying shapes by just moving the
-              slicing plane along the higher dimensions. For example, this animation was generated
-              by
-              moving the slicing plane from top to bottom:
-            </p> -->
           </div>
         </div>
       </div>
-
-      <!-- <div class="column is-half">
-        <div class="content has-text-justified">
-          <h3 class="is-4">Thermal Infrared Mode</h3>
-          <p>
-            Consider the follow shapes, which have different permutations of O xand X.
-          </p>
-          <div>
-            <img src="./assets/digitalPersonDet_v1.png" width="100%"/>
-          </div>
-          <p>
-            Traditionally, level-set methods use straight planes to slice the higher-dimensional
-            surface:
-          </p>
-          <div class="level-set-slices">
-            <img src="./assets/display/displayCanon.PNG"/>
-          </div>
-          <p>
-            This means the higher-dimensional shape must contain copies of the same shape since
-            each permutation has to lie along a single straight slice through the z-axis. If we let
-            the slicing plane bend, it results in a much cleaner template:
-          </p>
-        </div>
-      </div> -->
-
     </div>
+
+    
   </div>
 </section>
 
@@ -452,8 +424,8 @@
                   <div class="hyper-space-cursor1" id="cursor1"></div>
                 </div>
               </div>
-             X: contrast <br> 
-             Y: gamma 
+             X: Gamma Adjustment<br> 
+             Y: Color Correction Matrix
               <br />
 
             </div>
@@ -478,16 +450,15 @@
 
         <div class="info">
           <span class="title is-5 has-text-left">
-            gamma: 
+            Gamma Adjustment:
           </span>
-          <span class="is-text is-6">gamma correction compensates the luminance
-            of a pixel’s numerical value and it’s actual luminance</span>
+          <span class="is-text is-6">Gamma adjustment is a process that alters the luminance values of an image to match the characteristics of the display device. </span>
   
           <br />
           <span class="title is-5 has-text-left">
-            contrast:
+            Color Correction Matrix: 
           </span>
-          <span class="is-text is-6">measurement of different luminance levels between the brightest white and the darkest black in the light and dark area of an image</span>
+          <span class="is-text is-6">Color Correction Matrix is used to correct color inaccuracies in an image.</span>
 
         </div>
         
@@ -502,7 +473,7 @@
                   <div class="hyper-space-cursor2"></div>
                 </div>
               </div>
-              X: brightness <br> Y: non-local means 
+              X: Brightness Contrast Control <br> Y: Non-Local Means
               <br />
 
             </div>
@@ -526,14 +497,14 @@
         </div>
         <div class="info">
           <span class="title is-5 has-text-left">
-           brightness: 
+            Brightness Contrast Control: 
           </span>
-          <span class="is-text is6">Attribute of a visual sensation according to which an area appears to emit more or less light.</span>
+          <span class="is-text is6">Brightness Contrast Control controls the overall brightness and contrast of an image. </span>
           <br />
           <span class="title is-5 has-text-left">
-           non-local means: 
+            Non-Local Means: 
           </span>
-          <span class="is-text is6">larger value has stronger smoothing effect</span>
+          <span class="is-text is6">Non-Local Means is a denoising technique used to reduce noise in images while preserving details.</span>
         </div>
 
         
@@ -545,7 +516,7 @@
                   <div class="hyper-space-cursor3"></div>
                 </div>
               </div>
-              X: saturation <br> Y: BNF
+              X: Spatial Filtering <br> Y: Hue Saturation Control
               <br />
 
             </div>
@@ -569,14 +540,14 @@
         </div>
         <div class="info">
           <span class="title is-5 has-text-left">
-            saturation:
+            Spatial Filtering:
           </span>
-          <span class="is-text is-6">Color saturation refers to the purity of the color, that is, the degree to which the color is mixed with white light</span>
+          <span class="is-text is-6">Spatial filtering is a technique used to enhance or suppress certain features within an image based on their spatial characteristics.</span>
           <br />
           <span class="title is-5 has-text-left">
-            BNF:
+            Hue Saturation Control:
           </span>
-          <span class="is-text is-6">parameter of brightness normalization filter, larger value has stronger smoothing effect</span>
+          <span class="is-text is-6">Hue Saturation Control adjusts the hue and saturation of colors in an image. </span>
         </div>
 
       </section>
