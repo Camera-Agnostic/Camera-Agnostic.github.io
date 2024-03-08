@@ -1,3 +1,3 @@
 # Demostration of physical adversarial attack.
-Click [link](https://camera-agnostic.github.io/).
-![alt text](assets/pipeline_v5.png)
+[Access to showcase page](https://camera-agnostic.github.io/).
+![pipeline](assets/display/pipeline_v5.png)
