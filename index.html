@@ -1,129 +1,280 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="description"
-      content="Physical Adversarial Attack.">
-    <meta name="keywords" content="Physical Adversarial Attack, Privacy">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon"
-      type="image/x-icon"
-      href="./static/images/aim-logo.png" />
+   <head>
+      <meta charset="utf-8">
+      <meta property="og:title" content="DisCO"/>
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="600"/>
+      
+      <!-- Primary Meta Tags -->
+      <title>Revisiting Adversarial Patches for Designing Camera-Agnostic Attacks against Person Detection</title>
+      <meta name="title" content="Revisiting Adversarial Patches for Designing Camera-Agnostic Attacks against Person Detection">
+      <meta name="description" content="">
 
-    <title>Camera-Agnostic</title>
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://camera-agnostic.github.io/">
+      <meta property="og:title" content="Revisiting Adversarial Patches for Designing Camera-Agnostic Attacks against Person Detection">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="./static/images/aim-logo.png">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF010G6PN"></script>
+      <!-- Twitter -->
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://camera-agnostic.github.io/">
+      <meta property="twitter:title" content="Revisiting Adversarial Patches for Designing Camera-Agnostic Attacks against Person Detection">
+      <meta property="twitter:description" content="">
+      <meta property="twitter:image" content="./static/images/aim-logo.png">
+
+      <style>
+        button {
+            padding: 0.5em 0.75em;
+            margin: 0.4em 0.4em;
+            min-width: 18ch;
+            text-align: left;
+            background-color: #ddd;
+            color: #333;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+
+            @media screen and (-ms-high-contrast: active) {
+                border: 2px solid currentcolor;
+            }
+        }
+
+        button.on {
+            background-color: #333;
+            color: #eee; /*#bbb;*/
+        }
+
+        p.btncap {
+            margin: 0.4em 0.4em;
+            padding: 0 0.2em;
+            color: #333;
+            border-bottom: 2px solid #333;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 0.8em;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .desc {
+            margin: 1.5em 0.4em;
+        }
+
+        .wider_buttons button {
+            display: block;
+            min-width: 20.5ch;
+        }
+
+        .dropbtn {
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #aaaaaa;}
+
+        button {
+            display: block;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+
     <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        class VideoHandler {
+            constructor(n_data, n_methods, databtn_id, vidbtn_id, vidtag_id) {
+                this.n_data = n_data;
+                this.n_methods = n_methods;
 
-  gtag('config', 'G-EDF010G6PN');
+                this.databtn_id = databtn_id;
+                this.vidbtn_id = vidbtn_id;
+                this.vidtag_id = vidtag_id;
+
+                this.current_data = 0;
+                this.current_method = 0;
+                this.re10k_data_count = 10;
+                this.method_list = ["3dp", "fried", "wacv", "ours"];
+            }
+
+            get paused() {
+                return document.getElementById(this.vidtag_id + "0").paused;
+            }
+
+            sync_video(e) {
+                if (e === undefined) {
+                    return;
+                }
+                for (let i = 0; i < this.n_methods; i++) {
+                    let v = document.getElementById(this.vidtag_id + i.toString());
+                    if (v != e.currentTarget) {
+                        v.currentTime = e.currentTarget.currentTime;
+                    }
+                }
+            };
+
+            play_video(e) {
+                this.sync_video(e);
+                for (let i = 0; i < this.n_methods; i++) {
+                    document.getElementById(this.vidtag_id + i.toString()).play();
+                }
+            };
+
+            pause_video(e) {
+                for (let i = 0; i < this.n_methods; i++) {
+                    document.getElementById(this.vidtag_id + i.toString()).pause();
+                }
+                this.sync_video(e);
+            };
+
+            handleEvent(e) {
+                switch (e.type) {
+                    case "play": this.play_video(e); break;
+                    case "pause": this.pause_video(e); break;
+                    case "seeking": this.sync_video(e); break;
+                    case "seeked": this.sync_video(e); break;
+                    case "playing": this.sync_video(e); break;
+                }
+            }
+
+            select_data(j) {
+                this.current_data = j;
+
+                let autoplay = !this.paused;
+                let data_name = document.getElementById(this.databtn_id + j.toString()).value;
+                for (let i = 0; i < this.n_data; i++) {
+                    document.getElementById(this.databtn_id + i.toString()).className = (i == j ? "on" : "");
+                }
+                for (let i = 0; i < this.n_methods; i++) {
+                    // let video_name = document.getElementById(this.vidbtn_id + i.toString()).value;
+                    let video_name = this.method_list[i];
+
+                    if (j > this.re10k_data_count && i == 3) {
+                        //video_name = "ours";
+                        continue;
+                    }
+                    let v = document.getElementById(this.vidtag_id + i.toString());
+                    v.src = "./static/videos/" + data_name + "_" + video_name + "_True.mp4";
+                }
+                if (autoplay) {
+                    this.play_video();
+                }
+            };
+
+            register() {
+                for (let i = 0; i < this.n_data; i++) {
+                    document.getElementById(this.databtn_id + i.toString()).addEventListener("click", function () { this.select_data(i); }.bind(this, i));
+                }
+                for (let i = 0; i < this.n_methods; i++) {
+                    document.getElementById(this.vidtag_id + i.toString()).muted = true;
+                }
+            }
+        }
+
+        window.onload = function () {
+            cmp_handler = new VideoHandler(7, 4, "cmp_data", "cmp_btn", "cmp_vid");
+            cmp_handler.register();
+            cmp_handler.play_video();
+        };
+    </script>
 
 
-  </script>
+      <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+         rel="stylesheet">
+      <link rel="icon" href="static/icons/selfie-icon.png">
+      <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
+      <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
+      <link rel="stylesheet" href="static/css/bulma.min.css">
+      <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+      <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+      <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+      <link rel="stylesheet"
+         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+      <link rel="stylesheet" href="static/css/index.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+      <script defer src="static/js/fontawesome.all.min.js"></script>
+      <script src="static/js/bulma-carousel.min.js"></script>
+      <script src="static/js/bulma-slider.min.js"></script>
+      <script src="static/js/index.js"></script>
+   </head>
 
-    <script type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript"
-      src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript"
-      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-      rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
-
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
-  </head>
-  <body>
-
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a role="button" class="navbar-burger" aria-label="menu"
-          aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-    </nav>
-
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <!-- <div class="columns is-centered">
-        <div class="column is-4 has-text-centered">
-          <img src="static/images/aim-logo.png" />
-        </div>
-      </div> -->
-          <div class="container has-text-centered">
-            <h1 class="title is-1 publication-title">
-              Challenging AI+Camera Systems with Physical <br> Adversarial Attacks
-            <div class="is-size-5 publication-authors">
-                <div class="author-block">
-                  <a href="https://weihui1308.github.io/">Hui Wei</a><sup>1</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://lightchaserx.github.io/">Zhixiang Wang</a><sup>2</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://xiwen1.github.io/">Kewei Zhang</a><sup>1</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://github.com/Hallucinatie">Jiaqi Hou</a><sup>1</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://github.com/lywverdant">Yuanwei Liu</a><sup>1</sup>
-                </div>
-                <br>
-                <div class="author-block">
-                  <a href="https://scholar.google.com/citations?user=7OMHz2QAAAAJ">Xuemei Jia</a><sup>1</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://scholar.google.com/citations?user=Hl9QqZIAAAAJ">Meng Huang</a><sup>1</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://scholar.google.be/citations?user=c9ZfhU0AAAAJ">Ruimin Hu</a><sup>1</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://scholar.google.com/citations?user=JD-5DKcAAAAJ">Yinqiang Zheng</a><sup>2</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://ha0tang.github.io/">Hao Tang</a><sup>3</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://scholar.google.com/citations?user=cYNqDokAAAAJ">Joey Tianyi Zhou</a><sup>4</sup>
-                </div>
-                <div class="author-block">
-                  <a href="https://wangzwhu.github.io/home/">Zheng Wang</a><sup>1</sup>
-                </div>
+   <body>
+      <section class="publication-header">
+         <div class="hero-body">
+            <div class="container is-max-widescreen">
+               <div class="column has-text-centered">
+                  <h1 class="title is-1 publication-title">
+                    Revisiting Adversarial Patches for Designing Camera-Agnostic Attacks against Person Detection
+                  </h1>
+               </div>
             </div>
+         </div>
+      </section>
+      <section class="publication-author-block">
+         <div class="hero-body">
+            <div class="container ">
+               <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                     <div class="column has-text-centered">
+<!--                      <div class="is-size-3 publication-authors">
+                     <span class="author-block">Anonymous Authors<sup></sup></span>
+                     </div> -->
+                     <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                          <a href="https://weihui1308.github.io/">Hui Wei</a><sup>1</sup>
+                        <span class="author-block">
+                          <a href="https://lightchaserx.github.io/">Zhixiang Wang</a><sup>2</sup>
+                        <span class="author-block">
+                          <a href="https://xiwen1.github.io/">Kewei Zhang</a><sup>1</sup>
+                        <span class="author-block">
+                          <a href="https://github.com/Hallucinatie">Jiaqi Hou</a><sup>1</sup>
+                        <span class="author-block">
+                          <a href="https://github.com/lywverdant">Yuanwei Liu</a><sup>1</sup>
+                        <span class="author-block">
+                          <a href="https://ha0tang.github.io/">Hao Tang</a><sup>3</sup>
+                        <span class="author-block">
+                          <a href="https://wangzwhu.github.io/home/">Zheng Wang</a><sup>1</sup>
+                        </span>
+                     </div>
+                     <div class="is-size-5 publication-authors">
+                      <span class="author-block"><sup>1</sup>Wuhan University,</span>
+                      <span class="author-block"><sup>2</sup>The University of Tokyo,</span>
+                      <span class="author-block"><sup>3</sup>Peking University</span>
+                     </div>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Wuhan University,</span>
-              <span class="author-block"><sup>2</sup>The University of Tokyo,</span>
-              <span class="author-block"><sup>3</sup>Carnegie Mellon University</span>
-              <span class="author-block"><sup>4</sup>A*STAR</span>
-            </div>
-          </div>
+                     </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -148,7 +299,7 @@
                 </span>
                 <span class="link-block">
                   <a
-                    href="https://github.com/Camera-Agnostic/Camera-Agnostic.github.io"
+                    href="#"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
