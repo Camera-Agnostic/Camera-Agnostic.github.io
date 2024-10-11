@@ -70,7 +70,15 @@ body {
 }
 
 .publication-header .hero-body {
+  padding-top: 3rem;  /* adjust top padding */
+  padding-bottom: 0rem;
 }
+
+.publication-author-block .hero-body {
+  padding-top: 0rem;  /* adjust author block top padding */
+  padding-bottom: 2rem;
+}
+
 
 .publication-title {
     font-family: 'Google Sans', sans-serif;
