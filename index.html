@@ -2,9 +2,9 @@
 <html>
    <head>
       <meta charset="utf-8">
-      <meta property="og:title" content="DisCO"/>
+      <meta property="og:title" content="CAP"/>
       <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="600"/>
+      <meta property="og:image:height" content="100"/>
       
       <!-- Primary Meta Tags -->
       <title>Revisiting Adversarial Patches for Designing Camera-Agnostic Attacks against Person Detection</title>
@@ -16,14 +16,14 @@
       <meta property="og:url" content="https://camera-agnostic.github.io/">
       <meta property="og:title" content="Revisiting Adversarial Patches for Designing Camera-Agnostic Attacks against Person Detection">
       <meta property="og:description" content="">
-      <meta property="og:image" content="./static/images/aim-logo.png">
+      <!-- <meta property="og:image" content="./static/images/aim-logo.png"> -->
 
       <!-- Twitter -->
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:url" content="https://camera-agnostic.github.io/">
       <meta property="twitter:title" content="Revisiting Adversarial Patches for Designing Camera-Agnostic Attacks against Person Detection">
       <meta property="twitter:description" content="">
-      <meta property="twitter:image" content="./static/images/aim-logo.png">
+      <!-- <meta property="twitter:image" content="./static/images/aim-logo.png"> -->
 
       <style>
         button {
@@ -111,6 +111,25 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
     </style>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-EDF010G6PN');
+    </script>
+
+    <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript"
+    src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript"
+    src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
 
     <script>
         class VideoHandler {
@@ -253,17 +272,17 @@
                      </div> -->
                      <div class="is-size-5 publication-authors">
                         <span class="author-block">
-                          <a href="https://weihui1308.github.io/">Hui Wei</a><sup>1</sup>
+                          <a href="https://weihui1308.github.io/">Hui Wei</a><sup>1</sup> &nbsp;&nbsp;&nbsp;
                         <span class="author-block">
-                          <a href="https://lightchaserx.github.io/">Zhixiang Wang</a><sup>2</sup>
+                          <a href="https://lightchaserx.github.io/">Zhixiang Wang</a><sup>2</sup>&nbsp;&nbsp;&nbsp;
                         <span class="author-block">
-                          <a href="https://xiwen1.github.io/">Kewei Zhang</a><sup>1</sup>
+                          <a href="https://xiwen1.github.io/">Kewei Zhang</a><sup>1</sup> <br>
                         <span class="author-block">
-                          <a href="https://github.com/Hallucinatie">Jiaqi Hou</a><sup>1</sup>
+                          <a href="https://github.com/Hallucinatie">Jiaqi Hou</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
                         <span class="author-block">
-                          <a href="https://github.com/lywverdant">Yuanwei Liu</a><sup>1</sup>
+                          <a href="https://github.com/lywverdant">Yuanwei Liu</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
                         <span class="author-block">
-                          <a href="https://ha0tang.github.io/">Hao Tang</a><sup>3</sup>
+                          <a href="https://ha0tang.github.io/">Hao Tang</a><sup>3</sup>&nbsp;&nbsp;&nbsp;
                         <span class="author-block">
                           <a href="https://wangzwhu.github.io/home/">Zheng Wang</a><sup>1</sup>
                         </span>
@@ -274,6 +293,11 @@
                       <span class="author-block"><sup>3</sup>Peking University</span>
                      </div>
 
+                     <br>
+
+                     <div class="is-size-5 publication-authors">
+                      <span class="author-block">Thirty-Eighth Annual Conference on Neural Information Processing Systems (NeurIPS 2024)</span>
+                     </div>
                      </div>
 
             <div class="column has-text-centered">
@@ -314,7 +338,7 @@
                     <span class="icon">
                       <i class="far fa-images"></i>
                     </span>
-                    <span>Data</span>
+                    <span>Poster</span>
                   </a>
                 </span>
               </div>
@@ -440,12 +464,12 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The integration of cameras and artificial intelligence (AI) has revolutionized various applications, yet the robustness of these systems against physical adversarial attacks remains underexplored. 
-            Existing adversarial strategies typically target single imaging devices, resulting in limited efficacy and stability across different camera systems. 
-            Here, we present a camera-agnostic physical adversarial attack framework designed to challenge AI+camera synergies. Our approach introduces a novel adversarial optimization framework that consists of an attack module and a defense module. 
-            The attack module optimizes perturbations to maximize their effectiveness, while the defense module adjusts the parameters of a camera ISP proxy to minimize the attack's impact. These modules interact in an adversarial game, enhancing the stability of attacks across multiple camera types. 
-            Through extensive experiments, we demonstrate the efficacy of our method in misleading AI-driven tasks across various hardware configurations, including two distinct cameras and four smartphones. 
-            This work advances the field of physical adversarial attacks by providing robust, real-world applicable techniques for undermining AI+camera systems.
+            Physical adversarial attacks can deceive deep neural networks (DNNs), leading to erroneous predictions in real-world scenarios. To uncover potential security risks, attacking the safety-critical task of person detection has garnered significant attention. 
+            However, we observe that existing attack methods overlook the pivotal role of the camera in the physical adversarial attack workflow, involving capturing real-world scenes and converting them into digital images. 
+            This oversight leads to instability and challenges in reproducing these attacks. In this work, we revisit patch-based attacks against person detectors and introduce a camera-agnostic physical adversarial attack to mitigate this limitation. 
+            Specifically, we construct a differentiable camera Image Signal Processing (ISP) proxy network to compensate for physical-to-digital domain transition gap. Furthermore, the camera ISP proxy network serves as a defense module, forming an adversarial optimization framework with the attack module. 
+            The attack module optimizes adversarial perturbations to maximize effectiveness, while the defense module optimizes the conditional parameters of the camera ISP proxy network to minimize attack effectiveness. These modules engage in an adversarial game, enhancing cross-camera stability. 
+            Experimental results demonstrate that our proposed CAP (Camera-Agnostic Patch) attack effectively conceals persons from detectors across various imaging hardware, including two distinct cameras and four smartphones.
           </p>
           <!-- <p>
           <p>
